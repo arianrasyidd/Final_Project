@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rekomendasi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-image: url('https://cdn.wallpaperhi.com/1920x1200/20120421/tisto%20music%20live%20everything%20concert%20club%201920x1200%20wallpaper_www.wallpaperhi.com_7.jpg');background-size: cover;">
+        <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Choice Song</h1>
+        <table style="background-color: whitesmoke; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" cellspacing="10">
+        <td colspan="3" style="font-size: larger;"><b>{{favoritku['track_name']}}</b></td>
+        <tr>
+            <td>{{favoritku['artist_name']}}</td>
+            <td>🔵 {{favoritku['mood']}}</td>
+        </tr>
+        </table>
+        <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">You might also like this music based on your song choice's mood</h1>
+        {% for i in rekomen%}
+        <table style="background-color:whitesmoke; display: inline-block;  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" cellspacing="10">
+        <tr>
+        <td style="text-align: center;" rowspan="2">
+        <td colspan="3" style="font-size: larger;"><b>{{i['track_name']}}</b></td>
+        </tr>
+        <tr>
+        <td>Artist : {{i['artist']}}</td>
+        <br>
+        <td>| Song : {{i['track']}}</td>
+        </tr>
+        </table>
+        {% endfor %}
+        <br><br>
+        <center>
+        <form action = "http://127.0.0.1:5000">
+        <button class="btn btn-primary">Back</button>
+        </form>
+        </center>
+</body>
+</html>
